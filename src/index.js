@@ -1,14 +1,12 @@
 import React from "react";
 import reactdom from "react-dom/client";
 import App from "./App";
-import { Subscribe, Join, Tweet } from "./CSS-Basics/Buttons/buttons";
+import Buttons from "./CSS-Basics/Buttons/buttons";
 
 const root = reactdom.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <Subscribe />
-    <Join />
-    <Tweet />
+    <Buttons />
   </React.StrictMode>
 );

@@ -1,6 +1,16 @@
 import "./buttons.css";
 
-export function Subscribe() {
+export default function Buttons() {
+  return (
+    <div className="buttons">
+      <Subscribe />
+      <Join />
+      <Tweet />
+    </div>
+  );
+}
+
+function Subscribe() {
   return (
     <div>
       <button className="subscribe">SUBSCRIBE</button>
@@ -8,7 +18,7 @@ export function Subscribe() {
   );
 }
 
-export function Join() {
+function Join() {
   return (
     <div>
       <button className="join">JOIN</button>
@@ -16,7 +26,7 @@ export function Join() {
   );
 }
 
-export function Tweet() {
+function Tweet() {
   return (
     <div>
       <button className="tweet">Tweet</button>
