@@ -17,7 +17,7 @@ export function TextStyle() {
 
       <p className="apple-text">
         Shop early for the best selection of holiday favourites.{" "}
-        <span className="shop-link">Shop now &#62;</span>
+        <span className="shop-link">Shop Now &#62;</span>
       </p>
     </div>
   );
