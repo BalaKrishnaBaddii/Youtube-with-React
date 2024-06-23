@@ -4,17 +4,41 @@
   font-family: "Roboto", sans-serif;
 }
 
+.video {
+  width: 300px;
+}
 .thumbnail {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  object-position: right;
-  border-radius: 50px;
+  width: 300px;
+  cursor: pointer;
 }
 
-.thumbnail:hover {
-  border: 1px solid dodgerblue;
-  cursor: pointer;
+.video-title {
+  display: grid;
+  width: 300px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.video-author {
+  margin-bottom: 0px;
+  font-size: 14px;
+}
+
+.video-views,
+.video-upload-time {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.video-views {
+  font-size: 15px;
+}
+.video-upload-time {
+  font-size: 14px;
+}
+
+.video-upload-time {
+  padding-left: 2px;
 }
 
 .search-box {
