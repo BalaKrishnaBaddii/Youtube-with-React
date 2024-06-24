@@ -4,24 +4,52 @@
   font-family: "Roboto", sans-serif;
 }
 
-.video {
-  width: 300px;
+.search-box {
+  width: 370px;
+  height: 2.5rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+  border-radius: 100px;
+  padding-left: 1rem;
+  border: none;
+  box-shadow: 0px 0px 8px #3333;
 }
+
+.video-container {
+  background-color: #ddd;
+}
+
+.video-preview {
+  display: inline-block;
+  width: 278px;
+  height: 300px;
+  margin: 10px;
+  vertical-align: top;
+  background-color: #ffff;
+  padding: 5px;
+  border-radius: 5px;
+}
+
 .thumbnail {
-  width: 300px;
+  width: 278px;
   cursor: pointer;
 }
 
 .video-title {
   display: grid;
-  width: 300px;
+  width: 278px;
   font-size: 1rem;
   margin-bottom: 10px;
+}
+.video-link {
+  text-decoration: none;
+  color: inherit;
 }
 
 .video-author {
   margin-bottom: 0px;
   font-size: 14px;
+  cursor: pointer;
 }
 
 .video-views,
@@ -39,15 +67,4 @@
 
 .video-upload-time {
   padding-left: 2px;
-}
-
-.search-box {
-  width: 370px;
-  height: 2.5rem;
-  font-size: 1rem;
-  margin-top: 1rem;
-  border-radius: 100px;
-  padding-left: 1rem;
-  border: none;
-  box-shadow: 0px 0px 8px #3333;
 }

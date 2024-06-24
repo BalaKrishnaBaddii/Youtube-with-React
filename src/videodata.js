@@ -7,6 +7,7 @@ export const data = [
     image_name: "/Thumbnails/thumbnail-1.webp",
     icon_name: "/Thumbnails/channel-1.jpeg",
     video_link: "https://www.youtube.com/watch?v=n2RNcPRtAiY",
+    channel_link: "https://www.youtube.com/c/mkbhd",
   },
   {
     video_title: "Try Not To Laugh Challenge #9",
@@ -16,6 +17,7 @@ export const data = [
     image_name: "/Thumbnails/thumbnail-2.webp",
     icon_name: "/Thumbnails/channel-2.jpeg",
     video_link: "https://www.youtube.com/watch?v=mP0RAo9SKZk",
+    channel_link: "https://www.youtube.com/c/markiplier",
   },
   {
     video_title: "Crazy Tik Toks Taken Moments Before DISASTER",
@@ -25,6 +27,7 @@ export const data = [
     image_name: "/Thumbnails/thumbnail-3.webp",
     icon_name: "/Thumbnails/channel-3.jpeg",
     video_link: "https://www.youtube.com/watch?v=FgjPQQeTh1w",
+    channel_link: "https://www.youtube.com/user/SSSniperWolf",
   },
   {
     video_title:
@@ -35,6 +38,7 @@ export const data = [
     image_name: "/Thumbnails/thumbnail-4.webp",
     icon_name: "/Thumbnails/channel-4.jpeg",
     video_link: "https://www.youtube.com/watch?v=094y1Z2wpJg",
+    channel_link: "https://www.youtube.com/c/veritasium",
   },
   {
     video_title: "Kadane's Algorithm to Maximum Sum Subarray Problem",
@@ -44,6 +48,7 @@ export const data = [
     image_name: "/Thumbnails/thumbnail-5.webp",
     icon_name: "/Thumbnails/channel-5.jpeg",
     video_link: "https://www.youtube.com/watch?v=86CQq3pKSUw",
+    channel_link: "https://www.youtube.com/c/CSDojo",
   },
   {
     video_title: "Anything You Can Fit In The Circle I’ll Pay For",
@@ -53,6 +58,7 @@ export const data = [
     image_name: "/Thumbnails/thumbnail-6.webp",
     icon_name: "/Thumbnails/channel-6.jpeg",
     video_link: "https://www.youtube.com/watch?v=yXWw0_UfSFg",
+    channel_link: "https://www.youtube.com/channel/UCX6OQ3DkcsbYNE6H8uQQuVA",
   },
   {
     video_title: "Why Planes Don't Fly Over Tibet",
@@ -62,6 +68,7 @@ export const data = [
     image_name: "/Thumbnails/thumbnail-7.webp",
     icon_name: "/Thumbnails/channel-7.jpeg",
     video_link: "https://www.youtube.com/watch?v=fNVa1qMbF9Y",
+    channel_link: "https://www.youtube.com/channel/UCP5tjEmvPItGyLhmjdwP7Ww",
   },
   {
     video_title: "Inside The World's Biggest Passenger Plane",
@@ -71,6 +78,7 @@ export const data = [
     image_name: "/Thumbnails/thumbnail-8.webp",
     icon_name: "/Thumbnails/channel-8.jpeg",
     video_link: "https://www.youtube.com/watch?v=lFm4EM1juls",
+    channel_link: "https://www.youtube.com/channel/UCHAK6CyegY22Zj2GWrcaIxg",
   },
   {
     video_title: "The SECRET to Super Human STRENGTH",
@@ -80,6 +88,7 @@ export const data = [
     image_name: "/Thumbnails/thumbnail-9.webp",
     icon_name: "/Thumbnails/channel-9.jpeg",
     video_link: "https://www.youtube.com/watch?v=ixmxOlcrlUc",
+    channel_link: "https://www.youtube.com/c/OFFICIALTHENXSTUDIOS",
   },
   {
     video_title:
@@ -90,6 +99,7 @@ export const data = [
     image_name: "/Thumbnails/thumbnail-10.webp",
     icon_name: "/Thumbnails/channel-10.jpeg",
     video_link: "https://www.youtube.com/watch?v=R2vXbFp5C9o",
+    channel_link: "https://www.youtube.com/user/businessinsider",
   },
   {
     video_title:
@@ -100,6 +110,7 @@ export const data = [
     image_name: "/Thumbnails/thumbnail-11.webp",
     icon_name: "/Thumbnails/channel-11.jpeg",
     video_link: "https://www.youtube.com/watch?v=0nZuYyXET3s",
+    channel_link: "https://www.youtube.com/c/Destinationtips",
   },
   {
     video_title: "What would happen if you didn’t drink water? - Mia Nacamulli",
@@ -109,5 +120,6 @@ export const data = [
     image_name: "/Thumbnails/thumbnail-12.webp",
     icon_name: "/Thumbnails/channel-12.jpeg",
     video_link: "https://www.youtube.com/watch?v=9iMGFqMmUFs",
+    channel_link: "https://www.youtube.com/teded",
   },
 ];

@@ -7,7 +7,7 @@ const root = reactdom.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    {/* <YouTube /> */}
-    <Display />
+    <YouTube />
+    {/* <Display /> */}
   </React.StrictMode>
 );
