@@ -51,7 +51,7 @@ function VideoPreview({ children }) {
 function Thumbnail({ video }) {
   return (
     <div className="thumbnail">
-      <a href={video.video_link}>
+      <a href={video.video_link} title={video.video_title}>
         <img alt="sdf" src={video.image_name} />
       </a>
     </div>
@@ -65,7 +65,7 @@ function VideoInfoContainer({ children }) {
 function Icon({ video }) {
   return (
     <div className="author-icon">
-      <a href={video.channel_link}>
+      <a href={video.channel_link} title={video.author}>
         <img alt={video.video_title} src={video.icon_name} />
       </a>
     </div>
@@ -78,7 +78,7 @@ function VideoInfo({ children }) {
 
 function Author({ video }) {
   return (
-    <a href={video.channel_link} className="author-link">
+    <a href={video.channel_link} className="author-link" title={video.author}>
       <p className="video-author">{video.author}</p>
     </a>
   );
@@ -103,7 +103,11 @@ function VideoTitle({ video }) {
       ? video.video_title.substring(0, maxChars) + "..."
       : video.video_title;
   return (
-    <a href={video.video_link} className="video-title-link">
+    <a
+      href={video.video_link}
+      className="video-title-link"
+      title={video.video_title}
+    >
       <p className="video-title">{truncatedTitle}</p>
     </a>
   );

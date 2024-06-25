@@ -1,12 +1,12 @@
 import React from "react";
 import reactdom from "react-dom/client";
 import YouTube from "./youtube";
-import Grid from "./CSS-Basics/grid/gridbox";
+import FlexBox from "./CSS-Basics/FlexBox/flexBox";
 
 const root = reactdom.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <Grid />
+    <FlexBox />
   </React.StrictMode>
 );
