@@ -1,15 +1,18 @@
 import { useState } from "react";
 import { data } from "./videodata";
 import "./youtube.css";
+import "./top-panel.css";
 
 export default function YouTube() {
   const [videoData, setVideoData] = useState(data);
 
   return (
     <>
-      <TopPanel>
-        <SearchBox />
-      </TopPanel>
+      <Header>
+        <LeftSection />
+        <MiddleSection />
+        <RightSection />
+      </Header>
       <VideoContainer>
         {videoData.map((video) => (
           <VideoPreview>
@@ -32,12 +35,60 @@ export default function YouTube() {
   );
 }
 
-function Stats({ children }) {
-  return <div className="stats">{children}</div>;
+function Header({ children }) {
+  return <div className="header">{children}</div>;
+}
+function LeftSection() {
+  return (
+    <div className="left-section">
+      <img
+        className="hamburger"
+        src="/icons/hamburger-menu.svg"
+        alt="hamburger-menu"
+      />
+      <img className="logo" src="/icons/youtube-logo.svg" alt="logo" />
+    </div>
+  );
 }
 
-function TopPanel({ children }) {
-  return <div>{children}</div>;
+function MiddleSection() {
+  return (
+    <div className="middle-section">
+      <input className="search-box" type="text" placeholder="Search" />
+      <button className="search" title="Search">
+        <img src="/icons/search.svg" alt="search" />
+      </button>
+      <button className="voice" title="Microphone">
+        <img src="/icons/voice-search-icon.svg" alt="voice-search" />
+      </button>
+    </div>
+  );
+}
+
+function RightSection() {
+  return (
+    <div className="right-section">
+      <button title="Upload">
+        <img className="upload" src="/icons/upload.svg" alt="" />
+      </button>
+      <button title="Apps">
+        <img className="apps" src="/icons/youtube-apps.svg" alt="" />
+      </button>
+      <button title="notifications">
+        <img className="notifications" src="/icons/notifications.svg" alt="" />
+      </button>
+      <img
+        title="Bala Krishna Baddi"
+        className="profile-icon"
+        src="https://avatars.githubusercontent.com/u/54216324?v=4&size=64"
+        alt="profile"
+      />
+    </div>
+  );
+}
+
+function Stats({ children }) {
+  return <div className="stats">{children}</div>;
 }
 
 function VideoContainer({ children }) {
@@ -90,10 +141,6 @@ function Views({ video }) {
 
 function UploadTime({ video }) {
   return <p className="video-upload-time"> {video.upload_time}</p>;
-}
-
-function SearchBox() {
-  return <input className="search-box" type="text" placeholder="Search" />;
 }
 
 function VideoTitle({ video }) {

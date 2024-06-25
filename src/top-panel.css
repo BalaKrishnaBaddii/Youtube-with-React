@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid dodgerblue;
+  justify-content: space-between;
+  align-items: center;
+  height: 55px;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.hamburger {
+  height: 30px;
+  margin: 0px 24px 0px 24px;
+}
+
+.logo {
+  height: 30px;
+}
+
+.middle-section {
+  display: flex;
+  flex: 1;
+  margin-left: 60px;
+  margin-right: 35px;
+  max-width: 500px;
+  align-items: center;
+}
+
+.search-box {
+  flex: 1;
+  height: 40px;
+  font-size: 1rem;
+  border: 1px solid #c2c1c1;
+  box-shadow: inset 1px 2px 3px rgb(0, 0, 0, 0.05);
+  offset: 1px;
+  padding-left: 10px;
+  width: 0;
+}
+
+.search-box::placeholder {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+.search {
+  height: 40px;
+  width: 60px;
+  border: 1px solid #c2c1c1;
+  box-shadow: inset 1px 2px 3px rgb(0, 0, 0, 0.05);
+  background-color: #e0dddd33;
+  cursor: pointer;
+  margin-left: -1px;
+}
+
+.search img {
+  width: 25px;
+  height: 25px;
+  margin-top: 4px;
+}
+
+.search img:active {
+  padding: 1px;
+}
+
+.voice {
+  height: 40px;
+  width: 40px;
+  border: none;
+  border-radius: 20px;
+  margin-left: 10px;
+  background-color: #e0dddd33;
+  cursor: pointer;
+}
+
+.voice img {
+  height: 24px;
+}
+
+.voice img:active {
+  padding: 1px;
+}
+
+.right-section {
+  display: flex;
+  width: 180px;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 30px;
+  flex-shrink: 0;
+}
+
+.right-section button {
+  height: 38px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.upload,
+.apps,
+.notifications {
+  height: 24px;
+}
+
+.upload:active,
+.apps:active,
+.notifications:active {
+  padding: 1px;
+}
+
+.profile-icon {
+  height: 33px;
+  width: 33px;
+  border-radius: 20px;
+  cursor: pointer;
+}
