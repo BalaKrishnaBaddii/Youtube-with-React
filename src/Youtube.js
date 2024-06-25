@@ -10,31 +10,37 @@ export default function YouTube() {
       <TopPanel>
         <SearchBox />
       </TopPanel>
-      <Container>
+      <VideoContainer>
         {videoData.map((video) => (
           <VideoPreview>
             <Thumbnail video={video} />
-            <Details>
+            <VideoInfoContainer>
               <Icon video={video} />
               <VideoInfo>
                 <VideoTitle video={video} />
                 <Author video={video} />
-                <Views video={video} />
-                <UploadTime video={video} />
+                <Stats>
+                  <Views video={video} />
+                  <UploadTime video={video} />
+                </Stats>
               </VideoInfo>
-            </Details>
+            </VideoInfoContainer>
           </VideoPreview>
         ))}
-      </Container>
+      </VideoContainer>
     </>
   );
+}
+
+function Stats({ children }) {
+  return <div className="stats">{children}</div>;
 }
 
 function TopPanel({ children }) {
   return <div>{children}</div>;
 }
 
-function Container({ children }) {
+function VideoContainer({ children }) {
   return <div className="video-container">{children}</div>;
 }
 
@@ -52,8 +58,8 @@ function Thumbnail({ video }) {
   );
 }
 
-function Details({ children }) {
-  return <div className="video-detail">{children}</div>;
+function VideoInfoContainer({ children }) {
+  return <div className="video-info-grid">{children}</div>;
 }
 
 function Icon({ video }) {
@@ -91,10 +97,10 @@ function SearchBox() {
 }
 
 function VideoTitle({ video }) {
-  const maxChars = 45; // Set the maximum number of characters
+  const maxChars = 50; // Set the maximum number of characters
   const truncatedTitle =
     video.video_title.length > maxChars
-      ? video.video_title.slice(0, maxChars) + "..."
+      ? video.video_title.substring(0, maxChars) + "..."
       : video.video_title;
   return (
     <a href={video.video_link} className="video-title-link">
