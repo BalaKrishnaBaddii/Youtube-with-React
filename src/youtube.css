@@ -19,6 +19,18 @@ p {
   padding: 5px;
 }
 
+@media (max-width: 1060px) {
+  .video-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 629px) {
+  .video-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 .video-preview {
   display: grid;
   grid-template-columns: 1fr;
