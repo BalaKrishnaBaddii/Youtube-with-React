@@ -97,9 +97,9 @@
 
 .right-section {
   display: flex;
-  width: 180px;
+  width: 182px;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   margin-right: 30px;
   flex-shrink: 0;
 }
@@ -145,4 +145,19 @@
   width: 33px;
   border-radius: 20px;
   cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .right-section {
+    justify-content: start;
+  }
+
+  .header {
+    justify-content: center;
+  }
+
+  .search-box {
+    padding-left: 0px;
+    width: 20px;
+  }
 }
