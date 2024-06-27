@@ -10,46 +10,70 @@ p {
   margin-top: 0px;
 }
 
-.video-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  background-color: #f5f0f0;
-  column-gap: 20px;
-  row-gap: 10px;
-  padding: 5px;
+.container {
   padding-top: 80px;
-  padding-left: 80px;
+  padding-left: 96px;
+  padding-right: 24px;
+  background-color: rgb(249, 247, 247);
 }
 
-@media (max-width: 1075px) {
+.video-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #f5f0f0;
+  column-gap: 16px;
+  row-gap: 40px;
+  z-index: 0;
+}
+
+@media (max-width: 750px) {
+  .video-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .video-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 751px) and (max-width: 999px) {
   .video-container {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-@media (max-width: 699px) {
+@media (min-width: 1000px) {
   .video-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
 .video-preview {
   display: grid;
   grid-template-columns: 1fr;
-  background-color: #ffff;
   border-radius: 0px 0px 3px 3px;
   transition: box-shadow 0.25s;
-}
-
-.video-preview:hover {
-  box-shadow: 0px 0px 2px #333;
-  outline-offset: 3px;
 }
 
 .thumbnail {
   width: 100%;
   cursor: pointer;
-  margin-bottom: 3px;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.time-stamp {
+  position: absolute;
+  background-color: black;
+  color: white;
+  font-size: 13px;
+  right: 5px;
+  bottom: 15px;
+  padding: 4px 5px;
+  font-weight: 500px;
+  border-radius: 2px;
 }
 
 .thumbnail img {
@@ -57,31 +81,29 @@ p {
 }
 
 .author-icon {
-  width: 50px;
-  height: 50px;
+  width: 36px;
+  height: 36px;
   vertical-align: start;
 }
 
 .author-icon img {
-  width: 50px;
-  height: 50px;
+  width: 36px;
+  height: 36px;
   border-radius: 25px;
   cursor: pointer;
 }
 
 .video-info-grid {
   display: grid;
-  grid-template-columns: 50px 250px;
+  grid-template-columns: 50px 1fr;
 }
 
 .video-info {
-  display: grid;
-  grid-template-columns: 1fr;
   margin-left: 5px;
 }
 
 .video-title {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 20px;
   font-weight: bold;
   margin-bottom: 12px;
@@ -105,7 +127,6 @@ p {
 }
 
 .stats {
-  display: grid;
   grid-template-columns: auto 1fr;
   margin-bottom: 5px;
 }
@@ -113,6 +134,7 @@ p {
 .video-views,
 .video-upload-time {
   color: rgba(96, 96, 96);
+  display: inline-block;
 }
 
 .video-views {

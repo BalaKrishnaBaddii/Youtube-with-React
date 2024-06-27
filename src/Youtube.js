@@ -8,7 +8,7 @@ export default function YouTube() {
   const [videoData, setVideoData] = useState(data);
 
   return (
-    <>
+    <Container>
       <Header>
         <LeftSection />
         <MiddleSection />
@@ -33,7 +33,7 @@ export default function YouTube() {
           </VideoPreview>
         ))}
       </VideoContainer>
-    </>
+    </Container>
   );
 }
 
@@ -42,7 +42,39 @@ function Header({ children }) {
 }
 
 function SideBar() {
-  return <div className="sidebar">sidebar</div>;
+  return (
+    <div className="sidebar">
+      <div className="sidebar-icons">
+        <img alt="home" src="/left-icons/home.svg" />
+        <p>Home</p>
+      </div>
+
+      <div className="sidebar-icons">
+        <img alt="explore" src="/left-icons/explore.svg" />
+        <p>Home</p>
+      </div>
+
+      <div className="sidebar-icons">
+        <img alt="subscriptions" src="/left-icons/subscriptions.svg" />
+        <p>Explore</p>
+      </div>
+
+      <div className="sidebar-icons">
+        <img alt="originals" src="/left-icons/originals.svg" />
+        <p>Originals</p>
+      </div>
+
+      <div className="sidebar-icons">
+        <img alt="youtube-music" src="/left-icons/youtube-music.svg" />
+        <p>Youtube music</p>
+      </div>
+
+      <div className="sidebar-icons">
+        <img alt="library" src="/left-icons/library.svg" />
+        <p>Library</p>
+      </div>
+    </div>
+  );
 }
 function Container({ children }) {
   return <div className="container">{children}</div>;
@@ -83,15 +115,24 @@ function RightSection() {
       <button title="Apps">
         <img className="apps" src="/icons/youtube-apps.svg" alt="" />
       </button>
-      <button title="notifications">
-        <img className="notifications" src="/icons/notifications.svg" alt="" />
-      </button>
-      <img
-        title="Bala Krishna Baddi"
-        className="profile-icon"
-        src="https://avatars.githubusercontent.com/u/54216324?v=4&size=64"
-        alt="profile"
-      />
+      <div className="notification-div">
+        <button title="notifications">
+          <img
+            className="notifications"
+            src="/icons/notifications.svg"
+            alt=""
+          />
+        </button>
+        <div className="pop-up">3</div>
+      </div>
+      <div className="profile-icon">
+        <img
+          title="Bala Krishna Baddi"
+          className="profile-icon"
+          src="https://avatars.githubusercontent.com/u/54216324?v=4&size=64"
+          alt="profile"
+        />
+      </div>
     </div>
   );
 }
@@ -114,6 +155,7 @@ function Thumbnail({ video }) {
       <a href={video.video_link} title={video.video_title}>
         <img alt="sdf" src={video.image_name} />
       </a>
+      <div className="time-stamp">{video.video_length}</div>
     </div>
   );
 }

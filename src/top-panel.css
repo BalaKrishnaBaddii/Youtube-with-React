@@ -1,4 +1,4 @@
-body {
+* {
   margin: 0;
 }
 
@@ -14,6 +14,7 @@ body {
   left: 0px;
   right: 0px;
   background-color: #fff;
+  z-index: 100;
 }
 
 .left-section {
@@ -22,12 +23,12 @@ body {
 }
 
 .hamburger {
-  height: 30px;
+  height: 20px;
   margin: 0px 24px 0px 24px;
 }
 
 .logo {
-  height: 30px;
+  height: 20px;
 }
 
 .middle-section {
@@ -53,6 +54,7 @@ body {
 .search-box::placeholder {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
+  color: #7a7373;
 }
 
 .search {
@@ -113,6 +115,23 @@ body {
 .apps,
 .notifications {
   height: 24px;
+}
+
+.notification-div {
+  position: relative;
+}
+
+.pop-up {
+  position: absolute;
+  background-color: rgb(193, 6, 6);
+  color: white;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  top: 3px;
+  right: 0px;
+  font-size: 10px;
+  padding: 1px 5px;
+  border-radius: 10px;
 }
 
 .upload:active,
