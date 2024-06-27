@@ -2,6 +2,7 @@ import { useState } from "react";
 import { data } from "./videodata";
 import "./youtube.css";
 import "./top-panel.css";
+import "./sidebar.css";
 
 export default function YouTube() {
   const [videoData, setVideoData] = useState(data);
@@ -13,6 +14,7 @@ export default function YouTube() {
         <MiddleSection />
         <RightSection />
       </Header>
+      <SideBar />
       <VideoContainer>
         {videoData.map((video) => (
           <VideoPreview>
@@ -37,6 +39,13 @@ export default function YouTube() {
 
 function Header({ children }) {
   return <div className="header">{children}</div>;
+}
+
+function SideBar() {
+  return <div className="sidebar">sidebar</div>;
+}
+function Container({ children }) {
+  return <div className="container">{children}</div>;
 }
 function LeftSection() {
   return (
