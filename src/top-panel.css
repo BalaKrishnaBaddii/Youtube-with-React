@@ -58,6 +58,7 @@
 }
 
 .search {
+  position: relative;
   height: 40px;
   width: 60px;
   border: 1px solid #c2c1c1;
@@ -65,6 +66,17 @@
   background-color: #e0dddd33;
   cursor: pointer;
   margin-left: -1px;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: -30px;
+  background-color: #999696;
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 2px;
+  font-size: 12px;
+  opacity: 1;
 }
 
 .search img {
@@ -159,5 +171,14 @@
   .search-box {
     padding-left: 0px;
     width: 20px;
+  }
+
+  .logo {
+    height: 15px;
+    width: 80px;
+  }
+
+  .left-section {
+    justify-content: center;
   }
 }

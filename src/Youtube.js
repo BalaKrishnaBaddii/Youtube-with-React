@@ -6,13 +6,32 @@ import "./sidebar.css";
 
 export default function YouTube() {
   const [videoData, setVideoData] = useState(data);
+  const [button, setButton] = useState(false);
+  const [tooltip, setTooltip] = useState("");
+
+  function handleHover(tip) {
+    setTooltip(tip);
+    setButton((button) => setButton(!button));
+  }
 
   return (
     <Container>
       <Header>
         <LeftSection />
-        <MiddleSection />
-        <RightSection />
+        <MiddleSection
+          tooltip={tooltip}
+          setTooltip={setTooltip}
+          button={button}
+          setButton={setButton}
+          handleHover={handleHover}
+        />
+        <RightSection
+          tooltip={tooltip}
+          setTooltip={setTooltip}
+          button={button}
+          setButton={setButton}
+          handleHover={handleHover}
+        />
       </Header>
       <SideBar />
       <VideoContainer>
@@ -92,46 +111,102 @@ function LeftSection() {
   );
 }
 
-function MiddleSection() {
+function MiddleSection({
+  tooltip,
+  button,
+  setButton,
+  setTooltip,
+  handleHover,
+}) {
   return (
     <div className="middle-section">
       <input className="search-box" type="text" placeholder="Search" />
-      <button className="search" title="Search">
+      <button
+        className="search"
+        onMouseEnter={() => handleHover("Search")}
+        onMouseLeave={handleHover}
+      >
         <img src="/icons/search.svg" alt="search" />
+        <Tooltip tooltip={tooltip} button={button} buttonName={"Search"} />
       </button>
-      <button className="voice" title="Microphone">
+      <button
+        className="voice"
+        onMouseEnter={() => handleHover("Voice Search")}
+        onMouseLeave={handleHover}
+      >
         <img src="/icons/voice-search-icon.svg" alt="voice-search" />
+        <Tooltip
+          tooltip={tooltip}
+          button={button}
+          buttonName={"Voice Search"}
+        />
       </button>
     </div>
   );
 }
 
-function RightSection() {
+function Tooltip({ button, tooltip, buttonName }) {
+  return (
+    <div>
+      {button && tooltip === buttonName ? (
+        <div className="tooltip">{tooltip}</div>
+      ) : (
+        ""
+      )}
+    </div>
+  );
+}
+
+function RightSection({ tooltip, button, setButton, setTooltip, handleHover }) {
   return (
     <div className="right-section">
-      <button title="Upload">
+      <button
+        title="Upload"
+        onMouseEnter={() => handleHover("Upload")}
+        onMouseLeave={handleHover}
+      >
         <img className="upload" src="/icons/upload.svg" alt="" />
+        <Tooltip tooltip={tooltip} button={button} buttonName={"Upload"} />
       </button>
-      <button title="Apps">
+      <button
+        title="Apps"
+        onMouseEnter={() => handleHover("Apps")}
+        onMouseLeave={handleHover}
+      >
         <img className="apps" src="/icons/youtube-apps.svg" alt="" />
+        <Tooltip tooltip={tooltip} button={button} buttonName={"Apps"} />
       </button>
       <div className="notification-div">
-        <button title="notifications">
+        <button
+          title="notifications"
+          onMouseEnter={() => handleHover("Notifications")}
+          onMouseLeave={handleHover}
+        >
           <img
             className="notifications"
             src="/icons/notifications.svg"
             alt=""
           />
+          <Tooltip
+            tooltip={tooltip}
+            button={button}
+            buttonName={"Notifications"}
+          />
         </button>
         <div className="pop-up">3</div>
       </div>
-      <div className="profile-icon">
+      <div
+        className="profile-icon"
+        onMouseEnter={() => handleHover("Profile")}
+        onMouseLeave={handleHover}
+      >
         <img
           title="Bala Krishna Baddi"
           className="profile-icon"
           src="https://avatars.githubusercontent.com/u/54216324?v=4&size=64"
           alt="profile"
         />
+        <Tooltip tooltip={tooltip} button={button} buttonName={"Profile"} />
       </div>
     </div>
   );
@@ -151,12 +226,12 @@ function VideoPreview({ children }) {
 
 function Thumbnail({ video }) {
   return (
-    <div className="thumbnail">
-      <a href={video.video_link} title={video.video_title}>
+    <a href={video.video_link}>
+      <div className="thumbnail">
         <img alt="sdf" src={video.image_name} />
-      </a>
-      <div className="time-stamp">{video.video_length}</div>
-    </div>
+        <div className="time-stamp">{video.video_length}</div>
+      </div>
+    </a>
   );
 }
 
@@ -180,7 +255,7 @@ function VideoInfo({ children }) {
 
 function Author({ video }) {
   return (
-    <a href={video.channel_link} className="author-link" title={video.author}>
+    <a href={video.channel_link} className="author-link">
       <p className="video-author">{video.author}</p>
     </a>
   );

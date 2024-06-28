@@ -99,7 +99,8 @@ p {
 }
 
 .video-info {
-  margin-left: 3px;
+  margin-left: 2px;
+  padding-right: 2px;
 }
 
 .video-title {
