@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { data } from "./videodata";
 import "./youtube.css";
 import "./top-panel.css";
@@ -37,15 +37,36 @@ export default function YouTube() {
       <VideoContainer>
         {videoData.map((video) => (
           <VideoPreview>
-            <Thumbnail video={video} />
+            <Thumbnail
+              key={video.video_title}
+              img={video.image_name}
+              link={video.video_title}
+              length={video.video_length}
+            />
             <VideoInfoContainer>
-              <Icon video={video} />
+              <Icon
+                key={video.video_title}
+                icon={video.icon_name}
+                channel_link={video.channel_link}
+                author={video.author}
+              />
               <VideoInfo>
-                <VideoTitle video={video} />
-                <Author video={video} />
+                <VideoTitle
+                  title={video.video_title}
+                  link={video.video_link}
+                  key={video.video_title}
+                />
+                <Author
+                  channel_link={video.channel_link}
+                  author={video.author}
+                  key={video.video_title}
+                />
                 <Stats>
-                  <Views video={video} />
-                  <UploadTime video={video} />
+                  <Views views={video.views} key={video.video_title} />
+                  <UploadTime
+                    upload_time={video.upload_time}
+                    key={video.video_title}
+                  />
                 </Stats>
               </VideoInfo>
             </VideoInfoContainer>
@@ -224,12 +245,12 @@ function VideoPreview({ children }) {
   return <div className="video-preview">{children}</div>;
 }
 
-function Thumbnail({ video }) {
+function Thumbnail({ link, img, length }) {
   return (
-    <a href={video.video_link}>
+    <a href={link}>
       <div className="thumbnail">
-        <img alt="sdf" src={video.image_name} />
-        <div className="time-stamp">{video.video_length}</div>
+        <img alt="sdf" src={img} />
+        <div className="time-stamp">{length}</div>
       </div>
     </a>
   );
@@ -239,11 +260,11 @@ function VideoInfoContainer({ children }) {
   return <div className="video-info-grid">{children}</div>;
 }
 
-function Icon({ video }) {
+function Icon({ icon, channel_link, author }) {
   return (
     <div className="author-icon">
-      <a href={video.channel_link} title={video.author}>
-        <img alt={video.video_title} src={video.icon_name} />
+      <a href={channel_link} title={author}>
+        <img alt={icon} src={icon} />
       </a>
     </div>
   );
@@ -253,34 +274,28 @@ function VideoInfo({ children }) {
   return <div className="video-info">{children}</div>;
 }
 
-function Author({ video }) {
+function Author({ channel_link, author }) {
   return (
-    <a href={video.channel_link} className="author-link">
-      <p className="video-author">{video.author}</p>
+    <a href={channel_link} className="author-link">
+      <p className="video-author">{author}</p>
     </a>
   );
 }
 
-function Views({ video }) {
-  return <p className="video-views">{video.views} &#183; </p>;
+function Views({ views }) {
+  return <p className="video-views">{views} &#183; </p>;
 }
 
-function UploadTime({ video }) {
-  return <p className="video-upload-time"> {video.upload_time}</p>;
+function UploadTime({ upload_time }) {
+  return <p className="video-upload-time"> {upload_time}</p>;
 }
 
-function VideoTitle({ video }) {
+function VideoTitle({ title, link }) {
   const maxChars = 50; // Set the maximum number of characters
   const truncatedTitle =
-    video.video_title.length > maxChars
-      ? video.video_title.substring(0, maxChars) + "..."
-      : video.video_title;
+    title.length > maxChars ? title.substring(0, maxChars) + "..." : title;
   return (
-    <a
-      href={video.video_link}
-      className="video-title-link"
-      title={video.video_title}
-    >
+    <a href={link} className="video-title-link" title={title}>
       <p className="video-title">{truncatedTitle}</p>
     </a>
   );
